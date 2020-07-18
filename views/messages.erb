@@ -1,15 +1,17 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Message</th>
+      <th>Topic</th>
       <th>Partition</th>
+      <th>Message</th>
     </tr>
   </thead>
   <tbody>
-    <% messages.each do |m| %>
+    <% recent_messages.each do |msg| %>
       <tr>
-        <td><%= m['body'] %></td>
-        <td><%= m['partition'] %></td>
+        <td><%= msg.topic %></td>
+        <td><%= msg.partition %></td>
+        <td><%= msg.value %></td>
       </tr>
     <% end %>
   <tbody>
