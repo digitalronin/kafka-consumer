@@ -2,6 +2,7 @@
 
 require "bundler/setup"
 require 'kafka'
+require "concurrent/map"
 require "sinatra"
 require 'tempfile'
 
