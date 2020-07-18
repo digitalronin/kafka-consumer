@@ -11,8 +11,7 @@
       <tr>
         <td><%= msg.topic %></td>
         <td><%= msg.partition %></td>
-        <% pretty = JSON.pretty_generate(JSON.parse(msg.value)) %>
-        <td><%= pretty %></td>
+        <td><%= msg.value %></td>
       </tr>
     <% end %>
   <tbody>

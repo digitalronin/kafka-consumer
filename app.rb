@@ -1,10 +1,9 @@
 #!/usr/bin/env ruby
 
-require 'json'
 require "bundler/setup"
+require 'kafka'
 require "concurrent/map"
 require "sinatra"
-require 'kafka'
 require 'tempfile'
 
 KAFKA_TOPIC = ENV.fetch('KAFKA_TOPIC', 'messages')
