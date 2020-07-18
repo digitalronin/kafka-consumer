@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Message</th>
+      <th>Partition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% messages.each do |m| %>
+      <tr>
+        <td><%= m['body'] %></td>
+        <td><%= m['partition'] %></td>
+      </tr>
+    <% end %>
+  <tbody>
+</table>
+
+<script>
+  setTimeout(function() { window.location.reload(); }, 5000);
+</script>
