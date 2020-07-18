@@ -1,5 +1,7 @@
+HEROKU_PRIVATE_SPACE := devspotlight-private
+
 setup:
-	heroku create
+	heroku apps:create --space $(HEROKU_PRIVATE_SPACE)
 	make set-heroku-config
 	git push heroku master
 	heroku open
