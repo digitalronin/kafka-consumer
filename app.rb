@@ -2,9 +2,33 @@
 
 require "bundler/setup"
 require "sinatra"
+require 'tempfile'
 
-def get_messages
-  []
+def initialize_kafka
+  start_consumer
+
+  at_exit do
+    puts "at_exit...."
+  end
+end
+
+def start_consumer
+  Thread.new do
+    begin
+      while true
+        puts "#{Time.now}: consume...."
+        sleep 3
+      end
+    rescue Exception => e
+      puts 'CONSUMER ERROR'
+      puts "#{e}\n#{e.backtrace.join("\n")}"
+      exit(1)
+    end
+  end
+end
+
+configure do
+  initialize_kafka
 end
 
 get "/" do
@@ -12,5 +36,5 @@ get "/" do
 end
 
 get "/messages" do
-  erb :messages, locals: { messages: get_messages }
+  erb :messages, locals: { messages: [] }
 end
