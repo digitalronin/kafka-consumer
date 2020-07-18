@@ -27,10 +27,6 @@ def start_consumer
   end
 end
 
-configure do
-  initialize_kafka
-end
-
 get "/" do
   redirect "/messages"
 end
