@@ -1,21 +1,10 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th>Topic</th>
-      <th>Partition</th>
-      <th>Message</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% recent_messages.each do |msg| %>
-      <tr>
-        <td><%= msg.topic %></td>
-        <td><%= msg.partition %></td>
-        <td><%= msg.value %></td>
-      </tr>
-    <% end %>
-  <tbody>
-</table>
+<% recent_messages.each do |msg| %>
+  <div class="card">
+    <div class="card-body">
+      <%= msg.value %>
+    </div>
+  </div>
+<% end %>
 
 <script>
   setTimeout(function() { window.location.reload(); }, 5000);
